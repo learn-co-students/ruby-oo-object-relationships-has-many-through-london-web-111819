@@ -22,5 +22,14 @@ class Waiter
     end
 
     def best_tipper
+        tips = []
+        meals.each do |meal|
+            tips.push(meal.tip)
+        end
+        meals.each do |meal|
+            if meal.tip == tips.max
+                return meal.customer
+            end
+        end
     end
 end
